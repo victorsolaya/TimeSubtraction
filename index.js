@@ -24,7 +24,7 @@ function CalculateTotalTime() {
     const floatTimes = Array.from(document.querySelectorAll('input'))
         //Only take the inputs with sth inside them
         .filter(inputValue => inputValue.value != "")
-        //We returned the values split 
+        //We returned the values split
         .map(stringTime => {
             const arrayFloat = stringTime.value.split(':');
             const valueReturned = arrayFloat.length > 1 ? (parseFloat(arrayFloat) * 60) + parseFloat(arrayFloat[1]) : (parseFloat(arrayFloat) * 60)
