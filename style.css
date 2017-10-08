@@ -1,12 +1,17 @@
 .container {
     display: flex;
-    min-width: 100vh;
+    min-width: 95vh;
     flex-wrap: wrap;
 }
-.inputs,
-.button {
+.inputs, .button, textarea {
     flex: 1;
     border: 5px solid goldenrod;
     margin: 5px 5px 5px 5px;
-    width: 100vh;
+    min-width: 100vh;
+    overflow: auto;
+}
+
+input {
+    border:5px solid mistyrose;
+    display: inline-block;
 }
