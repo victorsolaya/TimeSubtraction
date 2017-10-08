@@ -1,5 +1,44 @@
-.container {
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
     display: flex;
+    margin: 0;
+    height: 100vh;
+    background: #fafafa;
+    font-family: sans-serif;
+}
+
+.center {
+    margin: auto;
+    max-width: 300px;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+input, #result {
+    width: 100%;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .8);
+}
+
+input:focus {
+    border-color: #2196F3;
+}
+
+input { margin-bottom: 10px; }
+#result { margin-top: 10px; }
+
+#actions {
+    display: flex;
+<<<<<<< HEAD
     min-width: 95vh;
     flex-wrap: wrap;
 }
@@ -15,3 +54,33 @@ input {
     border:5px solid mistyrose;
     display: inline-block;
 }
+=======
+}
+
+button {
+    display: block;
+    padding: 5px 7px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    background: #2196F3;
+    color: white;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+button:hover {
+    background: #33a3fb;
+}
+
+button:active {
+    background: #2092ec;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+.filler {
+    flex-grow: 1;
+}
+>>>>>>> 42e77cb14c0810888f0d4df771dfd16aa8b634e4
