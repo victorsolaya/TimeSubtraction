@@ -1,7 +1,7 @@
 // Events
-document.getElementById('calc').addEventListener('click', CalculateTotalTime)
+document.getElementById('calc').addEventListener('click', calculateTotalTime)
 document.getElementById('addInputs').addEventListener('click', createPairOfInputs)
-document.getElementById('subtractTime').addEventListener('click', SubtractTime)
+document.getElementById('subtractTime').addEventListener('click', subtractTime)
 
 /** Creates the inputs that will be used to do the calculations. */
 function createPairOfInputs() {
@@ -19,7 +19,7 @@ function createPairOfInputs() {
 }
 
 /** Calculates the total time by adding up the inputs. */
-function CalculateTotalTime() {
+function calculateTotalTime() {
     const arrayTimes = []
     const floatTimes = Array.from(document.querySelectorAll('input'))
         // Only take the inputs that are not empty
@@ -33,11 +33,11 @@ function CalculateTotalTime() {
     // Add up the inputs
     const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0)
     // Put the value inside the textarea
-    TransformToMinutes(getTotal)
+    transformToMinutes(getTotal)
 }
 
 /** Calculates and displays the difference between the two inputs.  */
-function SubtractTime() {
+function subtractTime() {
     const subtractTimes = []
     const subtraction = Array.from(document.querySelectorAll('input'))
         .filter(inpValue => inpValue.value != "")
@@ -47,11 +47,11 @@ function SubtractTime() {
             return valueSubtractedReturned
         })
     const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0)
-    TransformToMinutes(getSubtraction)
+    transformToMinutes(getSubtraction)
 }
 
 /** Transforms seconds to minutes and displays the output. */
-function TransformToMinutes(time) {
+function transformToMinutes(time) {
     const minutes = Math.floor(time / 60)
     const seconds = time - (minutes * 60)
     document.getElementById('total').innerHTML = `Total: -->  ${minutes}:${seconds}`
