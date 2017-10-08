@@ -23,7 +23,7 @@ function calculateTotalTime() {
     const arrayTimes = []
     const floatTimes = Array.from(document.querySelectorAll('input'))
         // Only take the inputs that are not empty
-        .filter(inputValue => inputValue.value != "")
+        .filter(inputValue => inputValue.value != '')
         // Map the strings to numbers representing the seconds
         .map(stringTime => {
             const arrayFloat = stringTime.value.split(':')
@@ -40,7 +40,7 @@ function calculateTotalTime() {
 function subtractTime() {
     const subtractTimes = []
     const subtraction = Array.from(document.querySelectorAll('input'))
-        .filter(inpValue => inpValue.value != "")
+        .filter(inpValue => inpValue.value != '')
         .map(stringTime => {
             const arrayFloats = stringTime.value.split(':')
             const valueSubtractedReturned = arrayFloats.length > 1 ? (parseFloat(arrayFloats) * 60) + parseFloat(arrayFloats[1]) : (parseFloat(arrayFloats) * 60)
