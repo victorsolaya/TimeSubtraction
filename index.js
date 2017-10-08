@@ -25,11 +25,7 @@ function calculateTotalTime() {
         // Only take the inputs that are not empty
         .filter(inputValue => inputValue.value != '')
         // Map the strings to numbers representing the seconds
-        .map(stringTime => {
-            const arrayFloat = stringTime.value.split(':')
-            const valueReturned = arrayFloat.length > 1 ? (parseFloat(arrayFloat) * 60) + parseFloat(arrayFloat[1]) : (parseFloat(arrayFloat) * 60)
-            return valueReturned
-        })
+        .map(input => parseTimeString(input.value))
     // Add up the inputs
     const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0)
     // Put the value inside the textarea
@@ -41,13 +37,15 @@ function subtractTime() {
     const subtractTimes = []
     const subtraction = Array.from(document.querySelectorAll('input'))
         .filter(inpValue => inpValue.value != '')
-        .map(stringTime => {
-            const arrayFloats = stringTime.value.split(':')
-            const valueSubtractedReturned = arrayFloats.length > 1 ? (parseFloat(arrayFloats) * 60) + parseFloat(arrayFloats[1]) : (parseFloat(arrayFloats) * 60)
-            return valueSubtractedReturned
-        })
+        .map(input => parseTimeString(input.value))
     const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0)
     transformToMinutes(getSubtraction)
+}
+
+/** Parses a time string and returns the seconds. */
+function parseTimeString(timeString) {
+    const floats = timeString.split(':')
+    return floats.length > 1 ? (parseFloat(floats) * 60) + parseFloat(floats[1]) : (parseFloat(floats) * 60)
 }
 
 /** Transforms seconds to minutes and displays the output. */
