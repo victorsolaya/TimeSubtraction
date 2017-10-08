@@ -1,7 +1,7 @@
 //Events
 document.getElementById('calc').addEventListener('click', CalculateTotalTime);
 document.getElementById('addInputs').addEventListener('click', createPairOfInputs);
-document.getElementById('substractTime').addEventListener('click', SubstractTime);
+document.getElementById('subtractTime').addEventListener('click', SubtractTime);
 
 //Creation of inputs that we will use to do a minus between the later hour and the earlier hour.
 function createPairOfInputs() {
@@ -33,20 +33,20 @@ function CalculateTotalTime() {
     //We plus all the amounts
     const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0);
     //Put the value inside the textarea
-    document.getElementById('total').innerHTML = `Total :  ${getTotal}`;
+    TransformToMinutes(getTotal)
 }
 
-function SubstractTime() {
-    const substractTimes = [];
-    const substraction = Array.from(document.querySelectorAll('input'))
+function SubtractTime() {
+    const subtractTimes = [];
+    const subtraction = Array.from(document.querySelectorAll('input'))
         .filter(inpValue => inpValue.value != "")
         .map(stringTime => {
             const arrayFloats = stringTime.value.split(':');
-            const valueSubstractedReturned = arrayFloats.length > 1 ? (parseFloat(arrayFloats) * 60) + parseFloat(arrayFloats[1]) : (parseFloat(arrayFloats) * 60)
-            return valueSubstractedReturned;
+            const valueSubtractedReturned = arrayFloats.length > 1 ? (parseFloat(arrayFloats) * 60) + parseFloat(arrayFloats[1]) : (parseFloat(arrayFloats) * 60)
+            return valueSubtractedReturned;
         })
-    const getSubstraction = substraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0);
-    TransformToMinutes(getSubstraction);
+    const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0);
+    TransformToMinutes(getSubtraction);
 }
 
 function TransformToMinutes(time) {
