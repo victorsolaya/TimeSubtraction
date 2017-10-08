@@ -1,9 +1,9 @@
-//Events
+// Events
 document.getElementById('calc').addEventListener('click', CalculateTotalTime);
 document.getElementById('addInputs').addEventListener('click', createPairOfInputs);
 document.getElementById('subtractTime').addEventListener('click', SubtractTime);
 
-//Creation of inputs that we will use to do a minus between the later hour and the earlier hour.
+/** Creates the inputs that will be used to do the calculations. */
 function createPairOfInputs() {
     const container = document.getElementById('inputContainer');
     const divFirstElement = document.createElement('div');
@@ -18,24 +18,25 @@ function createPairOfInputs() {
     container.appendChild(divSecondElement);
 }
 
-//Calculate of times. Now, we plus what's inside the inputs and we put in a textarea.
+/** Calculates the total time by adding up the inputs. */
 function CalculateTotalTime() {
     const arrayTimes = [];
     const floatTimes = Array.from(document.querySelectorAll('input'))
-        //Only take the inputs with sth inside them
+        // Only take the inputs that are not empty
         .filter(inputValue => inputValue.value != "")
-        //We returned the values split
+        // Map the strings to numbers representing the seconds
         .map(stringTime => {
             const arrayFloat = stringTime.value.split(':');
             const valueReturned = arrayFloat.length > 1 ? (parseFloat(arrayFloat) * 60) + parseFloat(arrayFloat[1]) : (parseFloat(arrayFloat) * 60)
             return valueReturned;
         })
-    //We plus all the amounts
+    // Add up the inputs
     const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0);
-    //Put the value inside the textarea
+    // Put the value inside the textarea
     TransformToMinutes(getTotal)
 }
 
+/** Calculates and displays the difference between the two inputs.  */
 function SubtractTime() {
     const subtractTimes = [];
     const subtraction = Array.from(document.querySelectorAll('input'))
@@ -49,6 +50,7 @@ function SubtractTime() {
     TransformToMinutes(getSubtraction);
 }
 
+/** Transforms seconds to minutes and displays the output. */
 function TransformToMinutes(time) {
     const minutes = Math.floor(time / 60);
     const seconds = time - (minutes * 60);
