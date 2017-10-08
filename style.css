@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    min-width: 100vh;
+    flex-wrap: wrap;
+}
+
+.inputs,
+.button {
+    flex: 1;
+    border: 5px solid goldenrod;
+    margin: 5px 5px 5px 5px;
+    width: 100vh;
+}
