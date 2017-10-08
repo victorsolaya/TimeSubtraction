@@ -8,24 +8,27 @@
 </head>
 
 <body>
-    <div id="inputContainer" class="container">
-        <div class="inputs">
-            <input type="text" />
-        </div>
-        <div class="inputs">
-            <input type="text" />
-        </div>
+    <div id="parentContainer" class="parentContainer">
+        <div class="container">
+            <div class="inputs">
+                <input type="text" />
+            </div>
+            <div class="inputs">
+                <input type="text" />
+            </div>
 
-    </div>
-    <div id="calc" class="button">
-        <button>
-            Get total
-        </button>
+        </div>
     </div>
 
     <div id="addInputs" class="button">
         <button>
             Add inputs
+        </button>
+    </div>
+
+    <div id="calc" class="button">
+        <button>
+            Get total
         </button>
     </div>
 
@@ -36,9 +39,7 @@
     </div>
 
     <div class="result">
-        <textarea id="total">
-
-        </textarea>
+        <textarea id="total"></textarea>
     </div>
     <script src='./index.js'></script>
 </body>

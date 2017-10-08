@@ -5,17 +5,20 @@ document.getElementById('subtractTime').addEventListener('click', SubtractTime);
 
 //Creation of inputs that we will use to do a minus between the later hour and the earlier hour.
 function createPairOfInputs() {
-    const container = document.getElementById('inputContainer');
+    const container = document.getElementById('parentContainer');
+    const divContainer = document.createElement('div');
+    divContainer.className = 'container';
     const divFirstElement = document.createElement('div');
     divFirstElement.className = 'inputs';
     const divSecondElement = document.createElement('div');
     divSecondElement.className = 'inputs';
     const firstElement = document.createElement('input');
     const secondElement = document.createElement('input');
+    container.appendChild(divContainer);
     divFirstElement.appendChild(firstElement);
     divSecondElement.appendChild(secondElement);
-    container.appendChild(divFirstElement);
-    container.appendChild(divSecondElement);
+    divContainer.appendChild(divFirstElement);
+    divContainer.appendChild(divSecondElement);
 }
 
 //Calculate of times. Now, we plus what's inside the inputs and we put in a textarea.
