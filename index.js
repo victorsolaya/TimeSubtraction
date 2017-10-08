@@ -1,58 +1,58 @@
 // Events
-document.getElementById('calc').addEventListener('click', CalculateTotalTime);
-document.getElementById('addInputs').addEventListener('click', createPairOfInputs);
-document.getElementById('subtractTime').addEventListener('click', SubtractTime);
+document.getElementById('calc').addEventListener('click', CalculateTotalTime)
+document.getElementById('addInputs').addEventListener('click', createPairOfInputs)
+document.getElementById('subtractTime').addEventListener('click', SubtractTime)
 
 /** Creates the inputs that will be used to do the calculations. */
 function createPairOfInputs() {
-    const container = document.getElementById('inputContainer');
-    const divFirstElement = document.createElement('div');
-    divFirstElement.className = 'inputs';
-    const divSecondElement = document.createElement('div');
-    divSecondElement.className = 'inputs';
-    const firstElement = document.createElement('input');
-    const secondElement = document.createElement('input');
-    divFirstElement.appendChild(firstElement);
-    divSecondElement.appendChild(secondElement);
-    container.appendChild(divFirstElement);
-    container.appendChild(divSecondElement);
+    const container = document.getElementById('inputContainer')
+    const divFirstElement = document.createElement('div')
+    divFirstElement.className = 'inputs'
+    const divSecondElement = document.createElement('div')
+    divSecondElement.className = 'inputs'
+    const firstElement = document.createElement('input')
+    const secondElement = document.createElement('input')
+    divFirstElement.appendChild(firstElement)
+    divSecondElement.appendChild(secondElement)
+    container.appendChild(divFirstElement)
+    container.appendChild(divSecondElement)
 }
 
 /** Calculates the total time by adding up the inputs. */
 function CalculateTotalTime() {
-    const arrayTimes = [];
+    const arrayTimes = []
     const floatTimes = Array.from(document.querySelectorAll('input'))
         // Only take the inputs that are not empty
         .filter(inputValue => inputValue.value != "")
         // Map the strings to numbers representing the seconds
         .map(stringTime => {
-            const arrayFloat = stringTime.value.split(':');
+            const arrayFloat = stringTime.value.split(':')
             const valueReturned = arrayFloat.length > 1 ? (parseFloat(arrayFloat) * 60) + parseFloat(arrayFloat[1]) : (parseFloat(arrayFloat) * 60)
-            return valueReturned;
+            return valueReturned
         })
     // Add up the inputs
-    const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0);
+    const getTotal = floatTimes.reduce((valueBefore, valueAfter) => (valueBefore + valueAfter), 0)
     // Put the value inside the textarea
     TransformToMinutes(getTotal)
 }
 
 /** Calculates and displays the difference between the two inputs.  */
 function SubtractTime() {
-    const subtractTimes = [];
+    const subtractTimes = []
     const subtraction = Array.from(document.querySelectorAll('input'))
         .filter(inpValue => inpValue.value != "")
         .map(stringTime => {
-            const arrayFloats = stringTime.value.split(':');
+            const arrayFloats = stringTime.value.split(':')
             const valueSubtractedReturned = arrayFloats.length > 1 ? (parseFloat(arrayFloats) * 60) + parseFloat(arrayFloats[1]) : (parseFloat(arrayFloats) * 60)
-            return valueSubtractedReturned;
+            return valueSubtractedReturned
         })
-    const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0);
-    TransformToMinutes(getSubtraction);
+    const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0)
+    TransformToMinutes(getSubtraction)
 }
 
 /** Transforms seconds to minutes and displays the output. */
 function TransformToMinutes(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = time - (minutes * 60);
-    document.getElementById('total').innerHTML = `Total: -->  ${minutes}:${seconds}`;
+    const minutes = Math.floor(time / 60)
+    const seconds = time - (minutes * 60)
+    document.getElementById('total').innerHTML = `Total: -->  ${minutes}:${seconds}`
 }
