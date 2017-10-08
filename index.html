@@ -1,45 +1,25 @@
 <!DOCTYPE html>
 <html>
-<title> Time calculator </title>
 
 <head>
+    <title>Time calculator</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-
 </head>
 
 <body>
-    <div id="parentContainer" class="parentContainer">
-        <div class="container">
-            <div class="inputs">
-                <input type="text" />
-            </div>
-            <div class="inputs">
-                <input type="text" />
-            </div>
-
+    <div class="center">
+        <div id="inputs">
+            <input placeholder="00:00">
+            <input placeholder="00:00">
         </div>
-    </div>
-
-    <div id="addInputs" class="button">
-        <button>
-            Add inputs
-        </button>
-    </div>
-
-    <div id="calc" class="button">
-        <button>
-            Get total
-        </button>
-    </div>
-
-    <div id="subtractTime" class="button">
-        <button>
-            Subtract time
-        </button>
-    </div>
-
-    <div class="result">
-        <textarea id="total"></textarea>
+        <div id="actions">
+            <button id="addInputs">Add input</button>
+            <button id="removeInputs">Remove inputs</button>
+            <div class="filler"></div>
+            <button id="calculateTotal">Get total</button>
+            <button id="subtractTime">Subtract time</button>
+        </div>
+        <div id="result">00:00</div>
     </div>
     <script src='./index.js'></script>
 </body>
