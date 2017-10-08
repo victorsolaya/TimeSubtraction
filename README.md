@@ -22,3 +22,9 @@ There is also an option to calculate the total, by pressing "Get total", which i
 # Contributors
 
 I would like to thank @shroudedcode https://github.com/shroudedcode how did the styles and how help me with the code. I really apreciate it.
+
+# Ideas
+
+If you have any idea of how to improve this, or if you want me to create anything new you could need, just get in touch with me by writing an issue or by email.
+
+Email: victor.s.olaya@gmail.com
