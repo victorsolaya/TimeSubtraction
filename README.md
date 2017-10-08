@@ -19,3 +19,6 @@ meaning there is one hour and ten minutes difference.
 
 There is also an option to calculate the total, by pressing "Get total", which in this case would return <b>4:12</b>.
 
+# Contributors
+
+I would like to thank @shroudedcode https://github.com/shroudedcode how did the styles and how help me with the code. I really apreciate it.
