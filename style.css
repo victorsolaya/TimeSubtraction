@@ -4,7 +4,6 @@
 }
 
 body {
-    display: flex;
     margin: 0;
     height: 100vh;
     background: #fafafa;
@@ -40,7 +39,7 @@ input { margin-bottom: 10px; }
     display: flex;
 }
 
-button {
+.events {
     display: block;
     padding: 5px 7px;
     border-radius: 3px;
@@ -51,19 +50,47 @@ button {
     transition: .1s ease-in-out;
 }
 
-button:hover {
+.events:hover {
     background: #33a3fb;
 }
 
-button:active {
+.events:active {
     background: #2092ec;
 }
 
-button + button {
+.events + .events {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .filler {
     flex-grow: 1;
+}
+
+/** Sports */
+
+.sportsContainer {
+    display:flex;
+    border:5px solid goldenrod;
+}
+
+.sports {
+    flex: 1;
+    border:5px solid black;
+}
+
+.basketball {
+    background: red;
+}
+
+.football {
+    background: green;
+}
+
+.handball {
+    background: blue;
+}
+
+.hockey {
+    background: yellow;
 }

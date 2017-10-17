@@ -1,12 +1,13 @@
 // Events
-document.getElementById('calculateTotal').addEventListener('click', calculateTotalTime);
-document.getElementById('addInputs').addEventListener('click', addInput);
-document.getElementById('removeInputs').addEventListener('click', removeInput);
-document.getElementById('subtractTime').addEventListener('click', subtractTime);
+document.querySelector('#calculateTotal').addEventListener('click', calculateTotalTime);
+document.querySelector('#addInputs').addEventListener('click', addInput);
+document.querySelector('#removeInputs').addEventListener('click', removeInput);
+document.querySelector('#subtractTime').addEventListener('click', subtractTime);
+document.querySelectorAll('.sports').forEach((sport) => sport.addEventListener('click', sportChosen));
 
 /** Adds a new input field. */
 function addInput() {
-    const inputsContainer = document.getElementById('inputs');
+    const inputsContainer = document.querySelector('#inputs');
     const input = document.createElement('input');
     const input2 = document.createElement('input');
     input.placeholder = '00:00';
@@ -16,7 +17,7 @@ function addInput() {
 }
 
 function removeInput() {
-    const inputContainer = document.getElementById('inputs');
+    const inputContainer = document.querySelector('#inputs');
     let lastInputs = Array.from(document.querySelectorAll('input'));
     lastInputs = lastInputs.slice(lastInputs.length - 2);
     lastInputs.forEach(item => inputContainer.removeChild(item));
@@ -58,5 +59,15 @@ function displayOutput(time) {
     const minutesString = ('' + minutes).padStart(2, '0');
     const seconds = time - (minutes * 60);
     const secondsString = ('' + seconds).padStart(2, '0');
-    document.getElementById('result').innerHTML = `${minutesString}:${secondsString}`;
+    document.querySelector('#result').innerHTML = `${minutesString}:${secondsString}`;
 }
+
+/**
+ * Chosen sports
+ */
+
+ function sportChosen() {
+    //this contains the button clicked
+    const sport = Array.from(this.classList).filter((item) => item !== 'sports');
+    document.querySelector('body').className = sport[0];
+ }
