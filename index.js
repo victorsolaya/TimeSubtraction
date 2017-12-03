@@ -36,6 +36,11 @@ function calculateTotalTime() {
     displayOutput(getTotal);
 }
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 /** Calculates and displays the difference between the two inputs.  */
 function subtractTime() {
     const subtractTimes = [];
@@ -48,7 +53,7 @@ function subtractTime() {
 
 /** Parses a time string and returns the seconds. */
 function parseTimeString(timeString) {
-    const floats = timeString.split(':');
+    const floats = timeString.replace('.').split(':');
     return floats.length > 1 ? (parseFloat(floats) * 60) + parseFloat(floats[1]) : (parseFloat(floats) * 60);
 }
 
