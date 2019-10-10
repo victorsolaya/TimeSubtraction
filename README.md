@@ -27,8 +27,8 @@ I would like to thank @shroudedcode https://github.com/shroudedcode how did the 
 
 If you have any idea of how to improve this, or if you want me to create anything new you could need, just get in touch with me by writing an issue or by email.
 
-Email: victor.s.olaya@gmail.com
+Email: me@victorsolaya.com
 
 # Try
 
-You can try the program in this url: https://victorsolaya.github.io/TimeSubtraction/
+You can try the program in this url: https://time.victorsolaya.com
