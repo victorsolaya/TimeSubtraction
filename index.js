@@ -36,7 +36,7 @@ function calculateTotalTime() {
     displayOutput(getTotal);
 }
 
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.split(search).join(replacement);
 };
@@ -46,6 +46,7 @@ function subtractTime() {
     const subtractTimes = [];
     const subtraction = Array.from(document.querySelectorAll('input'))
         .filter(inpValue => inpValue.value != '')
+        .filter(inpValue => inpValue.value != null)
         .map(input => parseTimeString(input.value))
     const getSubtraction = subtraction.reduce((valueBefore, valueAfter) => (valueAfter - valueBefore), 0);
     displayOutput(getSubtraction);
