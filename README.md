@@ -11,6 +11,10 @@ Thank you for reading this, have a nice day!
 Follow me on GitHub: https://www.github.com/victorsolaya
 
 
+## Development
+
+It will be developed a new version in which you can compare the times and split in sections
+
 # Examples
 Let's say you want to calculate the the time between <b>1:31</b> and <b>2:41</b>:
 
