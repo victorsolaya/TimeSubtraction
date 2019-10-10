@@ -21,7 +21,7 @@ There is also an option to calculate the total, by pressing "Get total", which i
 
 # Contributors
 
-I would like to thank @shroudedcode https://github.com/shroudedcode how did the styles and how help me with the code. I really apreciate it.
+I would like to thank @shroudedcode https://github.com/shroudedcode how he did the styles and how he helped me with the code. I really appreciate it.
 
 # Ideas
 
